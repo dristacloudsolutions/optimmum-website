@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Outfit, Inter } from 'next/font/google'
+import StyledJsxRegistry from './registry'
 import './globals.css'
 
 const outfit = Outfit({
@@ -29,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <body>
-        {children}
+        <StyledJsxRegistry>
+          {children}
+        </StyledJsxRegistry>
       </body>
     </html>
   )
